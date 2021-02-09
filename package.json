@@ -1,0 +1,32 @@
+{
+  "name": "bloktech",
+  "version": "1.0.0",
+  "description": "First webapp in nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"hello world!\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaivWezel/Bloktech.git"
+  },
+  "keywords": [
+    "git",
+    "github",
+    "matching",
+    "back",
+    "end",
+    "front",
+    "end",
+    "nodejs"
+  ],
+  "author": "Kai van Wezel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KaivWezel/Bloktech/issues"
+  },
+  "homepage": "https://github.com/KaivWezel/Bloktech#readme",
+  "dependencies": {
+    "camelcase": "^6.2.0"
+  }
+}
