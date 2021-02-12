@@ -1,20 +1,28 @@
-const camelCase = require("camelcase");
 const express = require("express");
+const ejs = require("ejs");
 const app = express();
 const port = 3000;
 
-app.get("/", (req, res) => {
-  res.send("hello World!");
-});
+app.use(express.static("static"));
 
-app.get("/makkie", (req, res) => {
-  res.send("Makkelijk joh!");
-});
+app.set("view engine", "ejs");
 
 app.listen(port, () => {
-  console.log(`example app listening at http://localhost:${port}`);
+  console.log(`listening at port ${port}`);
 });
-console.log("hi there");
 
-camelCase("foo-bar");
-console.log(camelCase("foo-bar"));
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/index.html");
+});
+
+app.get("/contact", (req, res) => {
+  res.sendFile(__dirname + "/static/contact.html");
+});
+
+app.get("/profile/:name", function (req, res) {
+  res.render("profile", { person: req.params.name });
+});
+
+app.use(function (req, res) {
+  res.status(404).send("this page does not exist.");
+});
