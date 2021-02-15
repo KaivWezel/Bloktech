@@ -8,15 +8,63 @@
   </head>
   <body>
     <h1>Hey! Welkom <%= name %>!</h1>
-    <h2>Geef hier je hobbies/interesses op:</h2>
-    <ul>
-      <% hobbies.forEach((hobby) => {%>
-      <li>
-        <input type="checkbox" id="checkboxId" /><label for="checkboxId"
-          ><%=hobby %></label
-        >
-      </li>
-      <%})%>
-    </ul>
+    <h3>Wie ben je?</h3>
+    <form action="" method="POST" class="basic-info">
+      <ul>
+        <li>
+          <label for="name">name</label>
+          <input type="text" name="name" id="name" />
+        </li>
+        <li>
+          <label for="birthdate">birthdate</label>
+          <input type="date" name="birthdate" id="birthdate" />
+        </li>
+        <li>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
+        </li>
+        <input type="submit" />
+      </ul>
+    </form>
+    <h3>Hobby's</h3>
+    <form action="" method="POST" class="hobbies">
+      <ul>
+        <li>
+          <input type="checkbox" name="sport" id="sport" />
+          <label for="checkboxOne">Sport</label>
+        </li>
+        <li>
+          <input type="checkbox" name="reizen" id="reizen" />
+          <label for="checkboxTwo">Reizen</label>
+        </li>
+        <li>
+          <input type="checkbox" name="gamen" id="gamen" />
+          <label for="checkboxThree">Gamen</label>
+        </li>
+        <li>
+          <input type="checkbox" name="koken" id="koken" />
+          <label for="koken">Koken</label>
+        </li>
+      </ul>
+      <input type="submit" />
+    </form>
+    <h3>Vertel iets over jezelf</h3>
+    <form action="" method="POST" class="biography">
+      <label for="bio">Wie ben jij in het kort?</label>
+      <input type="text" placeholder="Hier typen" />
+      <input type="submit" />
+    </form>
+    <h3>Laat jezelf zien</h3>
+    <form action="" method="POST" class="upload">
+      <label for="upload">Zoek je mooiste foto's uit</label>
+      <input
+        type="file"
+        name="upload"
+        id="upload"
+        placeholder="Kies bestand"
+        accept="image/png, image/jpeg, image/gif"
+      />
+      <input type="submit" />
+    </form>
   </body>
 </html>
