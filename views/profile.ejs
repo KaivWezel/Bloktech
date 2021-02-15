@@ -7,6 +7,16 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>hey there <%= person %>!</h1>
+    <h1>Hey! Welkom <%= name %>!</h1>
+    <h2>Geef hier je hobbies/interesses op:</h2>
+    <ul>
+      <% hobbies.forEach((hobby) => {%>
+      <li>
+        <input type="checkbox" id="checkboxId" /><label for="checkboxId"
+          ><%=hobby %></label
+        >
+      </li>
+      <%})%>
+    </ul>
   </body>
 </html>

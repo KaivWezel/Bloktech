@@ -19,8 +19,11 @@ app.get("/contact", (req, res) => {
   res.sendFile(__dirname + "/static/contact.html");
 });
 
-app.get("/profile/:name", function (req, res) {
-  res.render("profile", { person: req.params.name });
+app.get("/profile/:name", (req, res) => {
+  res.render("profile", {
+    name: req.params.name,
+    hobbies: ["reizen", "koken", "sport", "knutselen", "gamen"],
+  });
 });
 
 app.use(function (req, res) {
