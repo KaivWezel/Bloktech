@@ -1,18 +1,11 @@
-const hobbies = ["reizen", "koken", "sporten", "gamen", "knutselen"];
-const list = document.querySelector(".hobbies");
+console.log("verbonden!");
 
-hobbies.forEach(function (hobby) {
-  const newListItem = document.createElement("li");
-  const label = document.createElement("label");
-  const checkbox = document.createElement("input");
+const form = document.querySelector(".biography");
+const bio = document.querySelector("p.bio");
+console.log(form.innerHTML, bio);
+const test = ".biography";
+console.log(test);
 
-  checkbox.setAttribute("type", "checkbox");
-  checkbox.setAttribute("id", hobby);
-
-  label.setAttribute("for", hobby);
-  label.innerText = hobby;
-
-  list.appendChild(newListItem);
-  newListItem.appendChild(checkbox);
-  newListItem.appendChild(label);
+form.addEventListener("submit", () => {
+  bio.innerText = "<%= bio %>";
 });
