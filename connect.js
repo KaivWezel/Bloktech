@@ -30,7 +30,7 @@ const User = mongoose.model("User", userSchema);
 const userOne = new User({ name: "Harry" });
 
 console.log(userOne);
-userOne.save(function (err, userOne) {
+userOne.save(function (err) {
   if (err) {
     console.log(err);
   }
