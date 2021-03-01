@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+form {
+  margin: 2em;
+}
+
+fieldset {
+  margin: 2em 0em;
+}
+
+input {
+  border: none;
+  box-shadow: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

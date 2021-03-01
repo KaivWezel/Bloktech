@@ -23,36 +23,32 @@
           <label for="email">Email</label>
           <input type="email" name="email" id="email" />
         </li>
-        <input type="submit" />
       </ul>
-    </form>
-    <h3>Wat zijn je hobby's?</h3>
-    <form action="/profile" method="POST" class="hobbies">
-      <ul>
-        <li>
-          <input type="checkbox" name="sport" id="checkboxOne" />
-          <label for="checkboxOne">Sport</label>
-        </li>
-        <li>
-          <input type="checkbox" name="reizen" id="checkboxTwo" />
-          <label for="checkboxTwo">Reizen</label>
-        </li>
-        <li>
-          <input type="checkbox" name="gamen" id="checkboxThree" />
-          <label for="checkboxThree">Gamen</label>
-        </li>
-        <li>
-          <input type="checkbox" name="koken" id="checkboxFour" />
-          <label for="checkboxFour">Koken</label>
-        </li>
-      </ul>
-      <button>submit</button>
-    </form>
-    <h3>Vertel iets over jezelf</h3>
-    <form action="/profile" method="POST" class="biography">
+      <h3>Wat zijn je hobby's?</h3>
+      <fieldset>
+        <legend>Vink aan wat je leuk vindt</legend>
+        <ul>
+          <li>
+            <input type="checkbox" name="sport" id="checkboxOne" />
+            <label for="checkboxOne">Sport</label>
+          </li>
+          <li>
+            <input type="checkbox" name="reizen" id="checkboxTwo" />
+            <label for="checkboxTwo">Reizen</label>
+          </li>
+          <li>
+            <input type="checkbox" name="gamen" id="checkboxThree" />
+            <label for="checkboxThree">Gamen</label>
+          </li>
+          <li>
+            <input type="checkbox" name="koken" id="checkboxFour" />
+            <label for="checkboxFour">Koken</label>
+          </li>
+        </ul>
+      </fieldset>
+      <h3>Vertel iets over jezelf</h3>
       <label for="bio">Wie ben jij in het kort?</label>
       <input type="text" name="bio" placeholder="Hier typen" id="bio" />
-      <input type="submit" />
     </form>
     <h3>Laat jezelf zien</h3>
     <form
