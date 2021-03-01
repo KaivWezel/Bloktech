@@ -60,6 +60,7 @@ app.get("/profile", (req, res) => {
   res.render("profile", { bio: "Hier komt je bio" });
 });
 
+//receive new user
 app.post(
   "/who",
   urlencodedParser,
@@ -82,11 +83,12 @@ app.post(
   }
 );
 
+//upload image(s)
 app.post("/upload", upload.single("upload"), (req, res) => {
   console.log(req.file);
 });
 
 //404
-app.use(function (req, res) {
+app.use((req, res) => {
   res.status(404).send("this page does not exist.");
 });
