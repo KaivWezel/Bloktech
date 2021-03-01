@@ -6,7 +6,7 @@ During this project I started working on my first webapplication. The concept is
 
 
 ## LICENSE
-MIT
+Find it [here](https://github.com/KaivWezel/Bloktech/blob/master/LICENSE)
 
 ## How to install
 * Clone repository to local directory/repository using `git clone`.
