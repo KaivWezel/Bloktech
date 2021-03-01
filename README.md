@@ -9,6 +9,6 @@ During this project I started working on my first webapplication. The concept is
 MIT
 
 ## How to install
-* Pull files to local repository/directory.
-* Install neccesary packages.
-* run "npm startServer"
+* Clone repository to local directory/repository using `git clone`.
+* Install neccesary packages. `npm install`
+* run server `npm startServer`
