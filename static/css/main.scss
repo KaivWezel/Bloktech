@@ -8,13 +8,13 @@ $blue: #00adb5;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: $text;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: $text;
   color: $blue;
   font-size: 4em;
 }
@@ -59,7 +59,6 @@ ul {
     }
   }
   label {
-    font-family: $text;
     color: $blue;
     font-size: 1em;
     text-transform: capitalize;
@@ -71,9 +70,9 @@ ul {
     box-shadow: none;
     width: 100%;
     padding: 1em;
-    font-family: $text;
     font-size: 1em;
     font-weight: 300;
+    background: $white;
     &:hover {
       background-color: rgb(207, 207, 207);
     }
@@ -89,7 +88,6 @@ ul {
 .hobbies {
   fieldset {
     appearance: none;
-    font-family: $text;
     border: none;
   }
   legend {
@@ -102,16 +100,95 @@ ul {
     flex-wrap: wrap;
   }
   li {
-    margin: 1em;
+    margin: 0.5em;
+    padding: 0.5em;
+    position: relative;
   }
   label {
     background: $white;
-    border: 1px solid $darkblue;
+    border: 1px solid $blue;
+    color: $red;
     display: inline-block;
     padding: 0em 1em;
     min-width: 5em;
-    background: white;
     border-radius: 1em;
+    cursor: pointer;
+    transition: 0.3s all ease;
   }
-  input
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    &:hover ~ label,
+    &:focus ~ label {
+      border: 1px solid $red;
+      background: $white;
+      box-shadow: 0px 0px 0px 1px $red inset;
+    }
+    &:checked ~ label {
+      background: $blue;
+      color: white;
+    }
+  }
+}
+
+.bio {
+  label {
+    color: $blue;
+    margin: 1em;
+  }
+  textarea {
+    appearance: none;
+    border: none;
+    width: 40em;
+    height: 10em;
+    background: $white;
+    padding: 1em;
+    resize: none;
+    color: $blue;
+    border-bottom: 2px solid $blue;
+    &::placeholder {
+      text-align: center;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background-color: rgb(219, 219, 219);
+    }
+  }
+}
+
+.upload {
+  position: relative;
+  label {
+    color: $blue;
+    margin: 1em;
+    text-align: center;
+  }
+  input {
+    text-align: center;
+    &::-webkit-file-upload-button {
+      appearance: none;
+      border: none;
+      background: $blue;
+      color: white;
+      padding: 1em;
+    }
+  }
+  button {
+    position: absolute;
+    bottom: 10em;
+    padding: 1em 3em;
+    appearance: none;
+    border: none;
+    background: $blue;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.2s all ease;
+    &:hover {
+      transform: scale(1.1);
+      border: none;
+    }
+  }
 }

@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const camelCase = require("camelcase");
 const ejs = require("ejs");
-const port = 4000;
+const port = 3000;
 const multer = require("multer");
 const path = require("path");
 const urlencodedParser = express.urlencoded();
@@ -49,7 +49,7 @@ app.listen(port, () => {
   console.log(`listening at port ${port}`);
 });
 
-//get form
+//get create profile
 app.get("/", (req, res) => {
   res.render("index");
 });
@@ -58,10 +58,10 @@ app.get("/profile/create", (req, res) => {
   res.render("create");
 });
 
-//receive new user
+//receive created profile
 app.post(
   "/profile/create",
-  express.urlencoded(),
+  urlencodedParser,
   upload.single("upload"),
   (req, res, next) => {
     res.render("profile", {
@@ -72,7 +72,7 @@ app.post(
   },
   (req, res) => {
     const newUser = new user({
-      name: camelCase(req.body.name, { pascalCase: true }),
+      name: req.body.name,
       birthdate: req.body.birthdate,
       email: req.body.email,
     });
@@ -83,11 +83,6 @@ app.post(
     });
   }
 );
-
-//upload image(s)
-app.post("/upload", upload.single("upload"), (req, res) => {
-  console.log(req.file);
-});
 
 //404
 app.use((req, res) => {

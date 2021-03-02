@@ -3,13 +3,13 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: "poppins", sans-serif;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: "poppins", sans-serif;
   color: #00adb5;
   font-size: 4em;
 }
@@ -71,7 +71,6 @@ ul {
 }
 
 .naw label {
-  font-family: "poppins", sans-serif;
   color: #00adb5;
   font-size: 1em;
   text-transform: capitalize;
@@ -87,9 +86,9 @@ ul {
           box-shadow: none;
   width: 100%;
   padding: 1em;
-  font-family: "poppins", sans-serif;
   font-size: 1em;
   font-weight: 300;
+  background: #eeeeee;
 }
 
 .naw input:hover {
@@ -108,7 +107,6 @@ ul {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  font-family: "poppins", sans-serif;
   border: none;
 }
 
@@ -127,16 +125,127 @@ ul {
 }
 
 .hobbies li {
-  margin: 1em;
+  margin: 0.5em;
+  padding: 0.5em;
+  position: relative;
 }
 
 .hobbies label {
   background: #eeeeee;
-  border: 1px solid #303841;
+  border: 1px solid #00adb5;
+  color: #ff5722;
   display: inline-block;
   padding: 0em 1em;
   min-width: 5em;
-  background: white;
   border-radius: 1em;
+  cursor: pointer;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.hobbies input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.hobbies input[type="checkbox"]:hover ~ label,
+.hobbies input[type="checkbox"]:focus ~ label {
+  border: 1px solid #ff5722;
+  background: #eeeeee;
+  -webkit-box-shadow: 0px 0px 0px 1px #ff5722 inset;
+          box-shadow: 0px 0px 0px 1px #ff5722 inset;
+}
+
+.hobbies input[type="checkbox"]:checked ~ label {
+  background: #00adb5;
+  color: white;
+}
+
+.bio label {
+  color: #00adb5;
+  margin: 1em;
+}
+
+.bio textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  width: 40em;
+  height: 10em;
+  background: #eeeeee;
+  padding: 1em;
+  resize: none;
+  color: #00adb5;
+  border-bottom: 2px solid #00adb5;
+}
+
+.bio textarea::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.bio textarea:-ms-input-placeholder {
+  text-align: center;
+}
+
+.bio textarea::-ms-input-placeholder {
+  text-align: center;
+}
+
+.bio textarea::placeholder {
+  text-align: center;
+}
+
+.bio textarea:focus {
+  outline: none;
+}
+
+.bio textarea:hover {
+  background-color: #dbdbdb;
+}
+
+.upload {
+  position: relative;
+}
+
+.upload label {
+  color: #00adb5;
+  margin: 1em;
+  text-align: center;
+}
+
+.upload input {
+  text-align: center;
+}
+
+.upload input::-webkit-file-upload-button {
+  -webkit-appearance: none;
+          appearance: none;
+  border: none;
+  background: #00adb5;
+  color: white;
+  padding: 1em;
+}
+
+.upload button {
+  position: absolute;
+  bottom: 10em;
+  padding: 1em 3em;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background: #00adb5;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  -webkit-transition: 0.2s all ease;
+  transition: 0.2s all ease;
+}
+
+.upload button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  border: none;
 }
 /*# sourceMappingURL=main.css.map */

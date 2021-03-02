@@ -13,6 +13,17 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  hobbies: {
+    type: Array,
+    required: true,
+  },
+  bio: {
+    type: String,
+  },
+  img: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("user", userSchema, console.log("new user"));
