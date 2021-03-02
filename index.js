@@ -3,15 +3,13 @@ const app = express();
 const camelCase = require("camelcase");
 const ejs = require("ejs");
 const port = 4000;
-const bodyParser = require("body-parser");
 const multer = require("multer");
 const path = require("path");
-// const fs = require("fs");
-const urlencodedParser = bodyParser.urlencoded({ extended: false });
+const urlencodedParser = express.urlencoded();
 require("dotenv/config");
 const mongoose = require("mongoose");
-// const MongoClient = require("mongodb").MongoClient;
 const user = require("./static/models/user");
+const fs = require("fs");
 const url = process.env.DB_HOST;
 
 //connect to mongodb with mongoose
@@ -29,7 +27,7 @@ mongoose
 
 //set storageengine Multer
 const storage = multer.diskStorage({
-  destination: "./static/public/uploads/",
+  destination: "./static/uploads/",
   filename: function (req, file, cb) {
     cb(
       null,
@@ -56,17 +54,20 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get("/profile", (req, res) => {
-  res.render("profile", { bio: "Hier komt je bio" });
+app.get("/profile/create", (req, res) => {
+  res.render("create");
 });
 
 //receive new user
 app.post(
-  "/who",
-  urlencodedParser,
+  "/profile/create",
+  express.urlencoded(),
+  upload.single("upload"),
   (req, res, next) => {
-    res.render("profile");
-    console.log(req.body);
+    res.render("profile", {
+      profile: req.body,
+    });
+    console.log(req.body, req.file);
     next();
   },
   (req, res) => {
