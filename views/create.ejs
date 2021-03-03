@@ -57,7 +57,7 @@
             <li>
               <input
                 type="checkbox"
-                name="sport"
+                name="hobbies"
                 id="checkboxOne"
                 value="sport"
               />
@@ -66,7 +66,7 @@
             <li>
               <input
                 type="checkbox"
-                name="reizen"
+                name="hobbies"
                 id="checkboxTwo"
                 value="reizen"
               />
@@ -75,7 +75,7 @@
             <li>
               <input
                 type="checkbox"
-                name="gamen"
+                name="hobbies"
                 id="checkboxThree"
                 value="gamen"
               />
@@ -84,7 +84,7 @@
             <li>
               <input
                 type="checkbox"
-                name="koken"
+                name="hobbies"
                 id="checkboxFour"
                 value="koken"
               />
@@ -106,11 +106,17 @@
       <section class="upload">
         <h3>Laat jezelf zien</h3>
         <label for="upload">Zoek je mooiste foto's uit</label>
-        <input type="file" name="upload" id="upload" placeholder="Kies bestand"
-        accept="image/png, image/jpeg, image/gif"/ required="true">
+        <input
+          type="file"
+          name="upload"
+          id="upload"
+          placeholder="Kies bestand"
+          accept="image/png, image/jpeg, image/gif"
+          required="false"
+        />
         <button>submit</button>
       </section>
     </form>
-    <script src="app.js"></script>
+    <script src="/js/create.js"></script>
   </body>
 </html>

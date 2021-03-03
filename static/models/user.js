@@ -22,7 +22,6 @@ const userSchema = mongoose.Schema({
   },
   img: {
     type: String,
-    required: true,
   },
 });
 
