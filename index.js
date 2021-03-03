@@ -102,7 +102,7 @@ app.post("/profile/edit", (req, res) => {
     currentUser = result;
     console.log(currentUser);
   });
-  res.send(currentUser);
+  res.send(JSON.stringify(currentUser));
 });
 
 //404
