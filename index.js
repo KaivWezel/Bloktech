@@ -6,9 +6,9 @@ const ejs = require('ejs')
 const port = 4000
 const multer = require('multer')
 const path = require('path')
-const urlencodedParser = express.urlencoded()
+const urlencodedParser = express.urlencoded({ extended: true })
 const mongoose = require('mongoose')
-const user = require('./static/models/user')
+const User = require('./static/models/user')
 const fs = require('fs')
 const { ObjectId } = require('mongodb')
 const { callbackify } = require('util')
@@ -69,8 +69,8 @@ app.post(
   '/profile/create',
   urlencodedParser,
   upload.single('upload'),
-  async (req, res, next) => {
-    const newUser = new user({
+  (req, res, next) => {
+    const newUser = new User({
       name: req.body.name,
       birthdate: req.body.birthdate,
       email: req.body.email,
@@ -88,13 +88,7 @@ app.post(
       })
   },
   (req, res) => {
-    // user.findById(currentUserId).then((err, result) => {
-    //   console.log("gevonden");
-    //   res.render("profile", {
-    //     profile: result,
-    //   });
-    // });
-    user.findById(profileId, done)
+    User.findById(profileId, done)
     function done(err, result) {
       console.log('gevonden')
       res.render('profile', {
@@ -107,9 +101,8 @@ app.post(
 //edit profile
 app.get('/profile/edit/:profileId', (req, res) => {
   profileId = req.params.profileId
-  user.findById(profileId, done)
+  User.findById(profileId, done)
   function done(err, result) {
-    console.log('gevonden')
     res.render('edit', {
       profile: result,
     })
@@ -118,7 +111,7 @@ app.get('/profile/edit/:profileId', (req, res) => {
 
 //profiles list
 app.get('/profiles', (req, res, profiles) => {
-  user.find().then((result) => {
+  User.find().then((result) => {
     res.render('profiles', {
       profiles: result,
     })
@@ -126,18 +119,23 @@ app.get('/profiles', (req, res, profiles) => {
 })
 
 //request for selected profile
-app.get('/profile/:profileId', (req, res) => {
-  profileId = req.params.profileId
-  user.findById(profileId, done)
-  function done(err, result) {
-    res.render('profile', {
-      profile: result,
+app
+  .get('/profile/:profileId', async (req, res) => {
+    profileId = req.params.profileId
+    const findUser = await User.findById(profileId).then((result) => {
+      return result
+      console.log(result)
     })
-  }
-})
-
-//update request
-app.post('/profile/update/:profileId')
+    res.render('profile', {
+      profile: findUser,
+    })
+  })
+  //update request
+  .post('/profile/:profileId', urlencodedParser, (req, res) => {
+    console.log('ontvangen')
+    profileId = req.params.profileId
+    console.log(req.body)
+  })
 
 //404
 app.use((req, res) => {
