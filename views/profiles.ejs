@@ -4,17 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
     <title>Document</title>
   </head>
-  <body>
-    <% profiles.forEach(profile =>{%>
-    <div class="profile">
-      <a href="/profile/<%= profile._id %>">
-        <p><%= profile.name%></p>
-        <p><%= profile.email%></p>
-        <p><%= profile._id%></p>
+  <body class="profilesList">
+    <section>
+      <% profiles.forEach(profile =>{%>
+      <a href="profile/<%= profile._id %>">
+        <div class="profile">
+          <p><%= profile.name%></p>
+          <p><%= profile.email%></p>
+          <p><%= profile._id%></p>
+          <img src="uploads/<%=profile.img%>" alt="" height="150px" />
+        </div>
       </a>
-    </div>
-    <%})%>
+      <%})%>
+    </section>
   </body>
 </html>

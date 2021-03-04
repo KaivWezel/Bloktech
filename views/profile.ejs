@@ -4,19 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
     <title>Document</title>
   </head>
-  <body>
+  <body class="profile">
     <h1>Dit is je profiel:</h1>
     <section class="profile">
-      <img src="/uploads/<%= profile.img %>" width="300px" />
-      <h3>Naam</h3>
+      <% if (profile.img){%>
+      <img src="/uploads/<%= profile.img %>" height="300x" />
+      <%}%>
+      <h3 class="naam">Naam</h3>
       <p><%= profile.name %></p>
-      <h3>Geboorte datum</h3>
+      <h3 class="geboorteDatum">Geboorte datum</h3>
       <p><%= profile.birthdate %></p>
-      <h3>Email</h3>
+      <h3 class="email">Email</h3>
       <p><%= profile.email %></p>
-      <h3>Hobbies</h3>
+      <h3 class="hobbies">Hobbies</h3>
       <ul class="hobbies">
         <% profile.hobbies.forEach((hobby) => {%>
         <li><%= hobby %></li>
@@ -24,11 +27,10 @@
       </ul>
       <h3>Bio</h3>
       <p><%= profile.bio %></p>
-
-      <form action="/profile/edit" method="POST">
-        <button>Bewerken</button>
-      </form>
-      <button>Verwijderen</button>
+    </section>
+    <section class="menu">
+      <a class="edit" href="/profile/edit/<%= profile._id%>">Bewerken</a>
+      <a class="delete" href="">Verwijderen</a>
     </section>
     <script src="/js/profile.js"></script>
   </body>

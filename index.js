@@ -88,7 +88,6 @@ app.post(
       })
   },
   (req, res) => {
-    //Waarom werkt dit niet met een promise?
     // user.findById(currentUserId).then((err, result) => {
     //   console.log("gevonden");
     //   res.render("profile", {
@@ -106,11 +105,11 @@ app.post(
 )
 
 //edit profile
-app.post('/profile/edit', (req, res) => {
+app.get('/profile/edit/:profileId', (req, res) => {
+  profileId = req.params.profileId
   user.findById(profileId, done)
   function done(err, result) {
     console.log('gevonden')
-    console.log(result)
     res.render('edit', {
       profile: result,
     })
@@ -120,7 +119,6 @@ app.post('/profile/edit', (req, res) => {
 //profiles list
 app.get('/profiles', (req, res, profiles) => {
   user.find().then((result) => {
-    console.log(profiles)
     res.render('profiles', {
       profiles: result,
     })
@@ -137,6 +135,10 @@ app.get('/profile/:profileId', (req, res) => {
     })
   }
 })
+
+//update request
+app.post('/profile/update/:profileId')
+
 //404
 app.use((req, res) => {
   res.status(404).send('this page does not exist.')

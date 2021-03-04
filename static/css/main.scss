@@ -16,17 +16,6 @@ h2,
 h3,
 h4 {
   color: $blue;
-  font-size: 4em;
-}
-
-section {
-  height: 100vh;
-  width: 100%;
-  background: $white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 ul {
@@ -34,6 +23,21 @@ ul {
 }
 
 body.create {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-size: 4em;
+  }
+  section {
+    height: 100vh;
+    width: 100%;
+    background: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .naw {
     ul {
       list-style: none;
@@ -179,6 +183,236 @@ body.create {
     button {
       position: absolute;
       bottom: 10em;
+      padding: 1em 3em;
+      appearance: none;
+      border: none;
+      background: $blue;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.2s all ease;
+      &:hover {
+        transform: scale(1.1);
+        border: none;
+      }
+    }
+  }
+}
+
+body.profile {
+  background-color: $white;
+  padding: 1em;
+  text-align: center;
+  section.profile {
+    display: flex;
+    flex-direction: column;
+    img {
+      margin: 0 auto;
+    }
+    h3 {
+      margin-top: 1em;
+    }
+  }
+  section.menu {
+    margin: 2em;
+    display: flex;
+    justify-content: space-around;
+    a.edit {
+      text-decoration: none;
+      color: $white;
+      background: $blue;
+      padding: 1em;
+    }
+    a.delete {
+      text-decoration: line-through;
+      color: $white;
+      background: $red;
+      padding: 1em;
+    }
+  }
+}
+
+body.profilesList {
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1em;
+  }
+  a {
+    text-decoration: none;
+    color: $blue;
+  }
+  div.profile {
+    background: $white;
+    border: 1px solid $blue;
+    padding: 2em;
+  }
+}
+
+body.edit {
+  background: $white;
+  text-align: center;
+  h1 {
+    font-size: 4em;
+  }
+  h2,
+  h3,
+  h4 {
+    font-size: 2em;
+  }
+  section {
+    margin: 3em 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .naw {
+    ul {
+      list-style: none;
+      width: 30%;
+      // margin-bottom: 10em;
+    }
+    li {
+      position: relative;
+      &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: $red;
+        transform: scale(0, 1);
+        transition: 0.2s ease-in-out;
+        transform-origin: left;
+      }
+      &:hover:after {
+        transform: scale(1, 1);
+      }
+      &:focus-within:after {
+        transform: scale(1, 1);
+      }
+    }
+    label {
+      color: $blue;
+      font-size: 1em;
+      text-transform: capitalize;
+    }
+    input {
+      position: relative;
+      appearance: none;
+      border: none;
+      box-shadow: none;
+      width: 100%;
+      padding: 1em;
+      font-size: 1em;
+      font-weight: 300;
+      background: $white;
+      &:hover {
+        background-color: rgb(207, 207, 207);
+      }
+      &:focus {
+        outline: none;
+      }
+      &:valid {
+        border: 1px solid $blue;
+      }
+    }
+  }
+
+  .hobbies {
+    fieldset {
+      appearance: none;
+      border: none;
+    }
+    legend {
+      margin: 2em auto;
+      color: $blue;
+      display: block;
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    li {
+      margin: 0.5em;
+      padding: 0.5em;
+      position: relative;
+    }
+    label {
+      background: $white;
+      border: 1px solid $blue;
+      color: $blue;
+      display: inline-block;
+      padding: 0em 1em;
+      min-width: 5em;
+      border-radius: 1em;
+      cursor: pointer;
+      transition: 0.3s all ease;
+    }
+    input[type='checkbox'] {
+      position: absolute;
+      opacity: 0;
+      &:hover ~ label,
+      &:focus ~ label {
+        border: 1px solid $red;
+        background: $white;
+        box-shadow: 0px 0px 0px 1px $red inset;
+      }
+      &:checked ~ label {
+        background: $blue;
+        color: white;
+      }
+    }
+  }
+
+  .bio {
+    label {
+      color: $blue;
+      margin: 1em;
+    }
+    textarea {
+      appearance: none;
+      border: none;
+      width: 40em;
+      height: 10em;
+      background: $white;
+      padding: 1em;
+      resize: none;
+      color: $blue;
+      border-bottom: 2px solid $blue;
+      &::placeholder {
+        text-align: center;
+      }
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        background-color: rgb(219, 219, 219);
+      }
+    }
+  }
+
+  .upload {
+    position: relative;
+    label {
+      color: $blue;
+      margin: 1em;
+      text-align: center;
+    }
+    input {
+      text-align: center;
+      &::-webkit-file-upload-button {
+        appearance: none;
+        border: none;
+        background: $blue;
+        color: white;
+        padding: 1em;
+      }
+    }
+    button {
+      margin: 2em;
       padding: 1em 3em;
       appearance: none;
       border: none;

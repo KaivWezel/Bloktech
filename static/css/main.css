@@ -11,10 +11,20 @@ h2,
 h3,
 h4 {
   color: #00adb5;
+}
+
+ul {
+  list-style: none;
+}
+
+body.create h1,
+body.create h2,
+body.create h3,
+body.create h4 {
   font-size: 4em;
 }
 
-section {
+body.create section {
   height: 100vh;
   width: 100%;
   background: #eeeeee;
@@ -31,10 +41,6 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-ul {
-  list-style: none;
 }
 
 body.create .naw ul {
@@ -244,6 +250,319 @@ body.create .upload button {
 }
 
 body.create .upload button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  border: none;
+}
+
+body.profile {
+  background-color: #eeeeee;
+  padding: 1em;
+  text-align: center;
+}
+
+body.profile section.profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body.profile section.profile img {
+  margin: 0 auto;
+}
+
+body.profile section.profile h3 {
+  margin-top: 1em;
+}
+
+body.profile section.menu {
+  margin: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body.profile section.menu a.edit {
+  text-decoration: none;
+  color: #eeeeee;
+  background: #00adb5;
+  padding: 1em;
+}
+
+body.profile section.menu a.delete {
+  text-decoration: line-through;
+  color: #eeeeee;
+  background: #ff5722;
+  padding: 1em;
+}
+
+body.profilesList section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 1em;
+}
+
+body.profilesList a {
+  text-decoration: none;
+  color: #00adb5;
+}
+
+body.profilesList div.profile {
+  background: #eeeeee;
+  border: 1px solid #00adb5;
+  padding: 2em;
+}
+
+body.edit {
+  background: #eeeeee;
+  text-align: center;
+}
+
+body.edit h1 {
+  font-size: 4em;
+}
+
+body.edit h2,
+body.edit h3,
+body.edit h4 {
+  font-size: 2em;
+}
+
+body.edit section {
+  margin: 3em 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body.edit .naw ul {
+  list-style: none;
+  width: 30%;
+}
+
+body.edit .naw li {
+  position: relative;
+}
+
+body.edit .naw li:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #ff5722;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+body.edit .naw li:hover:after {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+body.edit .naw li:focus-within:after {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+body.edit .naw label {
+  color: #00adb5;
+  font-size: 1em;
+  text-transform: capitalize;
+}
+
+body.edit .naw input {
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  width: 100%;
+  padding: 1em;
+  font-size: 1em;
+  font-weight: 300;
+  background: #eeeeee;
+}
+
+body.edit .naw input:hover {
+  background-color: #cfcfcf;
+}
+
+body.edit .naw input:focus {
+  outline: none;
+}
+
+body.edit .naw input:valid {
+  border: 1px solid #00adb5;
+}
+
+body.edit .hobbies fieldset {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+}
+
+body.edit .hobbies legend {
+  margin: 2em auto;
+  color: #00adb5;
+  display: block;
+}
+
+body.edit .hobbies ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+body.edit .hobbies li {
+  margin: 0.5em;
+  padding: 0.5em;
+  position: relative;
+}
+
+body.edit .hobbies label {
+  background: #eeeeee;
+  border: 1px solid #00adb5;
+  color: #00adb5;
+  display: inline-block;
+  padding: 0em 1em;
+  min-width: 5em;
+  border-radius: 1em;
+  cursor: pointer;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+body.edit .hobbies input[type='checkbox'] {
+  position: absolute;
+  opacity: 0;
+}
+
+body.edit .hobbies input[type='checkbox']:hover ~ label,
+body.edit .hobbies input[type='checkbox']:focus ~ label {
+  border: 1px solid #ff5722;
+  background: #eeeeee;
+  -webkit-box-shadow: 0px 0px 0px 1px #ff5722 inset;
+          box-shadow: 0px 0px 0px 1px #ff5722 inset;
+}
+
+body.edit .hobbies input[type='checkbox']:checked ~ label {
+  background: #00adb5;
+  color: white;
+}
+
+body.edit .bio label {
+  color: #00adb5;
+  margin: 1em;
+}
+
+body.edit .bio textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  width: 40em;
+  height: 10em;
+  background: #eeeeee;
+  padding: 1em;
+  resize: none;
+  color: #00adb5;
+  border-bottom: 2px solid #00adb5;
+}
+
+body.edit .bio textarea::-webkit-input-placeholder {
+  text-align: center;
+}
+
+body.edit .bio textarea:-ms-input-placeholder {
+  text-align: center;
+}
+
+body.edit .bio textarea::-ms-input-placeholder {
+  text-align: center;
+}
+
+body.edit .bio textarea::placeholder {
+  text-align: center;
+}
+
+body.edit .bio textarea:focus {
+  outline: none;
+}
+
+body.edit .bio textarea:hover {
+  background-color: #dbdbdb;
+}
+
+body.edit .upload {
+  position: relative;
+}
+
+body.edit .upload label {
+  color: #00adb5;
+  margin: 1em;
+  text-align: center;
+}
+
+body.edit .upload input {
+  text-align: center;
+}
+
+body.edit .upload input::-webkit-file-upload-button {
+  -webkit-appearance: none;
+          appearance: none;
+  border: none;
+  background: #00adb5;
+  color: white;
+  padding: 1em;
+}
+
+body.edit .upload button {
+  margin: 2em;
+  padding: 1em 3em;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background: #00adb5;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  -webkit-transition: 0.2s all ease;
+  transition: 0.2s all ease;
+}
+
+body.edit .upload button:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   border: none;
