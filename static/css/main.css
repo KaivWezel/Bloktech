@@ -37,17 +37,17 @@ ul {
   list-style: none;
 }
 
-.naw ul {
+body.create .naw ul {
   list-style: none;
   width: 30%;
 }
 
-.naw li {
+body.create .naw li {
   position: relative;
 }
 
-.naw li:after {
-  content: "";
+body.create .naw li:after {
+  content: '';
   display: block;
   width: 100%;
   height: 3px;
@@ -60,23 +60,23 @@ ul {
           transform-origin: left;
 }
 
-.naw li:hover:after {
+body.create .naw li:hover:after {
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);
 }
 
-.naw li:focus-within:after {
+body.create .naw li:focus-within:after {
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);
 }
 
-.naw label {
+body.create .naw label {
   color: #00adb5;
   font-size: 1em;
   text-transform: capitalize;
 }
 
-.naw input {
+body.create .naw input {
   position: relative;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -91,32 +91,32 @@ ul {
   background: #eeeeee;
 }
 
-.naw input:hover {
+body.create .naw input:hover {
   background-color: #cfcfcf;
 }
 
-.naw input:focus {
+body.create .naw input:focus {
   outline: none;
 }
 
-.naw input:valid {
+body.create .naw input:valid {
   border: 1px solid #00adb5;
 }
 
-.hobbies fieldset {
+body.create .hobbies fieldset {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   border: none;
 }
 
-.hobbies legend {
+body.create .hobbies legend {
   margin: 2em auto;
   color: #00adb5;
   display: block;
 }
 
-.hobbies ul {
+body.create .hobbies ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -124,13 +124,13 @@ ul {
       flex-wrap: wrap;
 }
 
-.hobbies li {
+body.create .hobbies li {
   margin: 0.5em;
   padding: 0.5em;
   position: relative;
 }
 
-.hobbies label {
+body.create .hobbies label {
   background: #eeeeee;
   border: 1px solid #00adb5;
   color: #00adb5;
@@ -143,30 +143,30 @@ ul {
   transition: 0.3s all ease;
 }
 
-.hobbies input[type="checkbox"] {
+body.create .hobbies input[type='checkbox'] {
   position: absolute;
   opacity: 0;
 }
 
-.hobbies input[type="checkbox"]:hover ~ label,
-.hobbies input[type="checkbox"]:focus ~ label {
+body.create .hobbies input[type='checkbox']:hover ~ label,
+body.create .hobbies input[type='checkbox']:focus ~ label {
   border: 1px solid #ff5722;
   background: #eeeeee;
   -webkit-box-shadow: 0px 0px 0px 1px #ff5722 inset;
           box-shadow: 0px 0px 0px 1px #ff5722 inset;
 }
 
-.hobbies input[type="checkbox"]:checked ~ label {
+body.create .hobbies input[type='checkbox']:checked ~ label {
   background: #00adb5;
   color: white;
 }
 
-.bio label {
+body.create .bio label {
   color: #00adb5;
   margin: 1em;
 }
 
-.bio textarea {
+body.create .bio textarea {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -180,45 +180,45 @@ ul {
   border-bottom: 2px solid #00adb5;
 }
 
-.bio textarea::-webkit-input-placeholder {
+body.create .bio textarea::-webkit-input-placeholder {
   text-align: center;
 }
 
-.bio textarea:-ms-input-placeholder {
+body.create .bio textarea:-ms-input-placeholder {
   text-align: center;
 }
 
-.bio textarea::-ms-input-placeholder {
+body.create .bio textarea::-ms-input-placeholder {
   text-align: center;
 }
 
-.bio textarea::placeholder {
+body.create .bio textarea::placeholder {
   text-align: center;
 }
 
-.bio textarea:focus {
+body.create .bio textarea:focus {
   outline: none;
 }
 
-.bio textarea:hover {
+body.create .bio textarea:hover {
   background-color: #dbdbdb;
 }
 
-.upload {
+body.create .upload {
   position: relative;
 }
 
-.upload label {
+body.create .upload label {
   color: #00adb5;
   margin: 1em;
   text-align: center;
 }
 
-.upload input {
+body.create .upload input {
   text-align: center;
 }
 
-.upload input::-webkit-file-upload-button {
+body.create .upload input::-webkit-file-upload-button {
   -webkit-appearance: none;
           appearance: none;
   border: none;
@@ -227,7 +227,7 @@ ul {
   padding: 1em;
 }
 
-.upload button {
+body.create .upload button {
   position: absolute;
   bottom: 10em;
   padding: 1em 3em;
@@ -243,7 +243,7 @@ ul {
   transition: 0.2s all ease;
 }
 
-.upload button:hover {
+body.create .upload button:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   border: none;

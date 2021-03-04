@@ -7,7 +7,114 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Current USer</h1>
-    <p><%= profile %></p>
+    <h1>Bewerk je profiel</h1>
+    <form action="/profile/create" method="POST" enctype="multipart/form-data">
+      <section class="naw">
+        <h3>Wie ben je?</h3>
+        <ul>
+          <li>
+            <label for="name">Naam</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required="true"
+              value="<%= profile.name %>"
+            />
+          </li>
+          <li>
+            <label for="birthdate">Geboortedatum</label>
+            <input
+              type="date"
+              name="birthdate"
+              id="birthdate"
+              required="true"
+              value="<%= profile.birthdate %>"
+            />
+          </li>
+          <li>
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required="true"
+              value="<%= profile.email %>"
+            />
+          </li>
+        </ul>
+      </section>
+      <section class="hobbies">
+        <h3>Wat zijn je hobby's?</h3>
+        <fieldset>
+          <legend>Vink aan wat je leuk vindt</legend>
+          <ul>
+            <li>
+              <input
+                type="checkbox"
+                name="hobbies"
+                id="checkboxOne"
+                value="sport"
+              />
+              <label for="checkboxOne">Sport</label>
+            </li>
+            <li>
+              <input
+                type="checkbox"
+                name="hobbies"
+                id="checkboxTwo"
+                value="reizen"
+              />
+              <label for="checkboxTwo">Reizen</label>
+            </li>
+            <li>
+              <input
+                type="checkbox"
+                name="hobbies"
+                id="checkboxThree"
+                value="gamen"
+              />
+              <label for="checkboxThree">Gamen</label>
+            </li>
+            <li>
+              <input
+                type="checkbox"
+                name="hobbies"
+                id="checkboxFour"
+                value="koken"
+              />
+              <label for="checkboxFour">Koken</label>
+            </li>
+          </ul>
+        </fieldset>
+      </section>
+      <section class="bio">
+        <h3>Vertel iets over jezelf</h3>
+        <label for="bio">Wie ben jij in het kort?</label>
+        <textarea type="text" name="bio" placeholder="Hier typen" id="bio">
+<%= profile.bio %></textarea
+        >
+      </section>
+      <section class="upload">
+        <h3>Laat jezelf zien</h3>
+        <%if(profile.img){%>
+        <img
+          src="/uploads/<%= profile.img %>"
+          alt="je afbeelding"
+          width="200px"
+          height="200px"
+        />
+        <%}%>
+        <label for="upload">Zoek je mooiste foto's uit</label>
+        <input
+          type="file"
+          name="upload"
+          id="upload"
+          placeholder="Kies bestand"
+          accept="image/png, image/jpeg, image/gif"
+        />
+        <button>submit</button>
+      </section>
+    </form>
   </body>
 </html>

@@ -1,4 +1,4 @@
-$text: "poppins", sans-serif;
+$text: 'poppins', sans-serif;
 $darkblue: #303841;
 $white: #eeeeee;
 $red: #ff5722;
@@ -33,162 +33,164 @@ ul {
   list-style: none;
 }
 
-.naw {
-  ul {
-    list-style: none;
-    width: 30%;
-    // margin-bottom: 10em;
-  }
-  li {
-    position: relative;
-    &:after {
-      content: "";
-      display: block;
+body.create {
+  .naw {
+    ul {
+      list-style: none;
+      width: 30%;
+      // margin-bottom: 10em;
+    }
+    li {
+      position: relative;
+      &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: $red;
+        transform: scale(0, 1);
+        transition: 0.2s ease-in-out;
+        transform-origin: left;
+      }
+      &:hover:after {
+        transform: scale(1, 1);
+      }
+      &:focus-within:after {
+        transform: scale(1, 1);
+      }
+    }
+    label {
+      color: $blue;
+      font-size: 1em;
+      text-transform: capitalize;
+    }
+    input {
+      position: relative;
+      appearance: none;
+      border: none;
+      box-shadow: none;
       width: 100%;
-      height: 3px;
-      background-color: $red;
-      transform: scale(0, 1);
-      transition: 0.2s ease-in-out;
-      transform-origin: left;
-    }
-    &:hover:after {
-      transform: scale(1, 1);
-    }
-    &:focus-within:after {
-      transform: scale(1, 1);
-    }
-  }
-  label {
-    color: $blue;
-    font-size: 1em;
-    text-transform: capitalize;
-  }
-  input {
-    position: relative;
-    appearance: none;
-    border: none;
-    box-shadow: none;
-    width: 100%;
-    padding: 1em;
-    font-size: 1em;
-    font-weight: 300;
-    background: $white;
-    &:hover {
-      background-color: rgb(207, 207, 207);
-    }
-    &:focus {
-      outline: none;
-    }
-    &:valid {
-      border: 1px solid $blue;
-    }
-  }
-}
-
-.hobbies {
-  fieldset {
-    appearance: none;
-    border: none;
-  }
-  legend {
-    margin: 2em auto;
-    color: $blue;
-    display: block;
-  }
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  li {
-    margin: 0.5em;
-    padding: 0.5em;
-    position: relative;
-  }
-  label {
-    background: $white;
-    border: 1px solid $blue;
-    color: $blue;
-    display: inline-block;
-    padding: 0em 1em;
-    min-width: 5em;
-    border-radius: 1em;
-    cursor: pointer;
-    transition: 0.3s all ease;
-  }
-  input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-    &:hover ~ label,
-    &:focus ~ label {
-      border: 1px solid $red;
+      padding: 1em;
+      font-size: 1em;
+      font-weight: 300;
       background: $white;
-      box-shadow: 0px 0px 0px 1px $red inset;
-    }
-    &:checked ~ label {
-      background: $blue;
-      color: white;
+      &:hover {
+        background-color: rgb(207, 207, 207);
+      }
+      &:focus {
+        outline: none;
+      }
+      &:valid {
+        border: 1px solid $blue;
+      }
     }
   }
-}
 
-.bio {
-  label {
-    color: $blue;
-    margin: 1em;
+  .hobbies {
+    fieldset {
+      appearance: none;
+      border: none;
+    }
+    legend {
+      margin: 2em auto;
+      color: $blue;
+      display: block;
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    li {
+      margin: 0.5em;
+      padding: 0.5em;
+      position: relative;
+    }
+    label {
+      background: $white;
+      border: 1px solid $blue;
+      color: $blue;
+      display: inline-block;
+      padding: 0em 1em;
+      min-width: 5em;
+      border-radius: 1em;
+      cursor: pointer;
+      transition: 0.3s all ease;
+    }
+    input[type='checkbox'] {
+      position: absolute;
+      opacity: 0;
+      &:hover ~ label,
+      &:focus ~ label {
+        border: 1px solid $red;
+        background: $white;
+        box-shadow: 0px 0px 0px 1px $red inset;
+      }
+      &:checked ~ label {
+        background: $blue;
+        color: white;
+      }
+    }
   }
-  textarea {
-    appearance: none;
-    border: none;
-    width: 40em;
-    height: 10em;
-    background: $white;
-    padding: 1em;
-    resize: none;
-    color: $blue;
-    border-bottom: 2px solid $blue;
-    &::placeholder {
+
+  .bio {
+    label {
+      color: $blue;
+      margin: 1em;
+    }
+    textarea {
+      appearance: none;
+      border: none;
+      width: 40em;
+      height: 10em;
+      background: $white;
+      padding: 1em;
+      resize: none;
+      color: $blue;
+      border-bottom: 2px solid $blue;
+      &::placeholder {
+        text-align: center;
+      }
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        background-color: rgb(219, 219, 219);
+      }
+    }
+  }
+
+  .upload {
+    position: relative;
+    label {
+      color: $blue;
+      margin: 1em;
       text-align: center;
     }
-    &:focus {
-      outline: none;
+    input {
+      text-align: center;
+      &::-webkit-file-upload-button {
+        appearance: none;
+        border: none;
+        background: $blue;
+        color: white;
+        padding: 1em;
+      }
     }
-    &:hover {
-      background-color: rgb(219, 219, 219);
-    }
-  }
-}
-
-.upload {
-  position: relative;
-  label {
-    color: $blue;
-    margin: 1em;
-    text-align: center;
-  }
-  input {
-    text-align: center;
-    &::-webkit-file-upload-button {
+    button {
+      position: absolute;
+      bottom: 10em;
+      padding: 1em 3em;
       appearance: none;
       border: none;
       background: $blue;
       color: white;
-      padding: 1em;
-    }
-  }
-  button {
-    position: absolute;
-    bottom: 10em;
-    padding: 1em 3em;
-    appearance: none;
-    border: none;
-    background: $blue;
-    color: white;
-    font-size: 1em;
-    cursor: pointer;
-    transition: 0.2s all ease;
-    &:hover {
-      transform: scale(1.1);
-      border: none;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.2s all ease;
+      &:hover {
+        transform: scale(1.1);
+        border: none;
+      }
     }
   }
 }

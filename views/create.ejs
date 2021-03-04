@@ -8,13 +8,8 @@
     <link rel="stylesheet" href="/css/main.css" />
     <title>Document</title>
   </head>
-  <body>
-    <form
-      action="/profile/create"
-      method="POST"
-      enctype="multipart/form-data"
-      class="basic-info"
-    >
+  <body class="create">
+    <form action="/profile/create" method="POST" enctype="multipart/form-data">
       <section class="naw">
         <h3>Wie ben je?</h3>
         <ul>
@@ -112,7 +107,6 @@
           id="upload"
           placeholder="Kies bestand"
           accept="image/png, image/jpeg, image/gif"
-          required="false"
         />
         <button>submit</button>
       </section>
