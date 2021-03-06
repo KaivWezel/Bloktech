@@ -19,6 +19,7 @@ const { callbackify } = require("util")
 const { profile, Console } = require("console")
 const { findOne } = require("../models/user")
 const url = process.env.DB_HOST
+const profileController = require("../controllers/profileControllers")
 
 //set storageengine Multer
 const storage = multer.diskStorage({
@@ -35,9 +36,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 //get create profile
-router.get("/profile/create", (req, res) => {
-  res.render("create")
-})
+router.get("/profile/create", profileController.profile_create_get)
 
 // current user Id storage
 let profileId
@@ -47,27 +46,11 @@ router.post(
   "/profile/create",
   urlencodedParser,
   upload.single("upload"),
-  (req, res, next) => {
-    console.log(req.body)
-    const newUser = new User({
-      name: req.body.name,
-      birthdate: req.body.birthdate,
-      email: req.body.email,
-      hobbies: req.body.hobbies,
-      bio: req.body.bio,
-      img: () => {
-        return req.file.filename ? req.file.filename : ""
-      },
-    })
-    newUser.save().then((User) => {
-      profileId = User.id
-      next()
-    })
-  },
-  (req, res) => {
-    res.redirect(`/profile/${profileId}`)
-  }
+  profileController.profile_create_post
 )
+
+//request for selected profile
+router.get("/profile/:profileId", profileController.profile_get)
 
 //DELETE PROFILE
 router.get(
@@ -100,17 +83,6 @@ router.get("/profile/edit/:profileId", (req, res) => {
       profile: result,
     })
   }
-})
-
-//request for selected profile
-router.get("/profile/:profileId", async (req, res) => {
-  console.log(req.params.profileId)
-  const findUser = await User.findById(req.params.profileId).then((result) => {
-    return result
-  })
-  res.render("profile", {
-    profile: findUser,
-  })
 })
 
 //update request
