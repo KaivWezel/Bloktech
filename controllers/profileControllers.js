@@ -40,9 +40,14 @@ const profile_post = async (req, res) => {
     img: req.file.filename,
   };
   console.log(req.params.profileId);
-  const updateUser = await User.findOneAndUpdate(req.params.profileId, update);
+  console.log(req.body);
+  const updateUser = await User.findOneAndUpdate(
+    { _id: req.params.profileId },
+    update
+  ).then((result) => {
+    return result;
+  });
   deleteImg(updateUser.img);
-  console.log(updateUser);
   res.redirect("/profiles");
 };
 
@@ -54,6 +59,7 @@ const profile_edit_get = async (req, res) => {
     profile: findUser,
   });
 };
+
 const profile_delete = async (req, res, next) => {
   const findUser = await User.findById(req.params.profileId).then((result) => {
     deleteImg(result.img);
