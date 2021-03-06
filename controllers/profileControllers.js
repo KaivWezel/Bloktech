@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const fs = require("fs");
 //profile_create_get, profile_create_post, profile_get, profile_edit, profile_delete
 
 const profile_create_get = (req, res) => {
@@ -21,7 +22,6 @@ const profile_create_post = (req, res) => {
 };
 
 const profile_get = async (req, res) => {
-  console.log(req.params.profileId);
   const findUser = await User.findById(req.params.profileId).then((result) => {
     return result;
   });
@@ -31,7 +31,6 @@ const profile_get = async (req, res) => {
 };
 
 const profile_post = async (req, res) => {
-  console.log(req.body, req.file);
   const update = {
     name: req.body.name,
     birthdate: req.body.birthdate,
@@ -40,22 +39,21 @@ const profile_post = async (req, res) => {
     bio: req.body.bio,
     img: req.file.filename,
   };
+  console.log(req.params.profileId);
   const updateUser = await User.findOneAndUpdate(req.params.profileId, update);
   deleteImg(updateUser.img);
   console.log(updateUser);
   res.redirect("/profiles");
 };
 
-const profile_edit_get = (req, res) => {
-  profileId = req.params.profileId;
-  User.findById(profileId, done);
-  function done(err, result) {
-    res.render("edit", {
-      profile: result,
-    });
-  }
+const profile_edit_get = async (req, res) => {
+  const findUser = await User.findById(req.params.profileId).then((result) => {
+    return result;
+  });
+  res.render("edit", {
+    profile: findUser,
+  });
 };
-
 const profile_delete = async (req, res, next) => {
   const findUser = await User.findById(req.params.profileId).then((result) => {
     deleteImg(result.img);

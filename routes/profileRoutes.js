@@ -9,6 +9,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: true });
 const mongoose = require("mongoose");
 const User = require("../models/user");
 const fs = require("fs");
+const path = require("path");
 const { ObjectId } = require("mongodb");
 const { callbackify } = require("util");
 const { profile, Console } = require("console");
@@ -43,15 +44,14 @@ router.post(
   upload.single("upload"),
   profileController.profile_create_post
 );
-
-//request for selected profile
-router.get("/profile/:profileId", profileController.profile_get);
-
 //DELETE PROFILE
 router.get("/profile/delete/:profileId", profileController.profile_delete);
 
 //edit profile
 router.get("/profile/edit/:profileId", profileController.profile_edit_get);
+
+//request for selected profile
+router.get("/profile/:profileId", profileController.profile_get);
 
 //update request
 router.post(

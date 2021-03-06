@@ -55,5 +55,5 @@ app.use((req, res) => {
 });
 
 // User.remove({}, () => {
-//   console.log("verwijderd")
-// })
+//   console.log("verwijderd");
+// });
