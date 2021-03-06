@@ -8,10 +8,15 @@
     <title>Document</title>
   </head>
   <body class="profile">
+    <%- include ('partials/nav')-%>
     <h1>Dit is je profiel:</h1>
     <section class="profile">
       <% if (profile.img){%>
-      <img src="/uploads/<%= profile.img %>" height="300x" />
+      <img
+        src="/uploads/<%= profile.img %>"
+        height="300x"
+        alt="Dit is je profielfoto"
+      />
       <%}%>
       <h3 class="naam">Naam</h3>
       <p><%= profile.name %></p>
@@ -30,7 +35,7 @@
     </section>
     <section class="menu">
       <a class="edit" href="/profile/edit/<%= profile._id%>">Bewerken</a>
-      <a class="delete" href="">Verwijderen</a>
+      <a class="delete" href="/profile/delete/<%= profile._id%>">Verwijderen</a>
     </section>
     <script src="/js/profile.js"></script>
   </body>

@@ -61,30 +61,21 @@
               <label for="checkboxOne">Sport</label>
             </li>
             <li>
-              <input
-                type="checkbox"
-                name="hobbies"
-                id="checkboxTwo"
-                value="reizen"
-              />
+              <input type="checkbox" name="hobbies" id="checkboxTwo"
+              value="reizen" <% if(profile.hobbies.includes('reizen')){%>
+              checked<%}%> />
               <label for="checkboxTwo">Reizen</label>
             </li>
             <li>
-              <input
-                type="checkbox"
-                name="hobbies"
-                id="checkboxThree"
-                value="gamen"
-              />
+              <input type="checkbox" name="hobbies" id="checkboxThree"
+              value="gamen" <% if(profile.hobbies.includes('gamen')){%> checked
+              <%}%> />
               <label for="checkboxThree">Gamen</label>
             </li>
             <li>
-              <input
-                type="checkbox"
-                name="hobbies"
-                id="checkboxFour"
-                value="koken"
-              />
+              <input type="checkbox" name="hobbies" id="checkboxFour"
+              value="koken" <% if(profile.hobbies.includes('koken')){%>
+              checked<%}%> />
               <label for="checkboxFour">Koken</label>
             </li>
           </ul>
@@ -114,6 +105,7 @@
           id="upload"
           placeholder="Kies bestand"
           accept="image/png, image/jpeg, image/gif"
+          required
         />
         <button>Opslaan</button>
       </section>

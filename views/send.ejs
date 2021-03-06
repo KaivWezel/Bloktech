@@ -7,11 +7,10 @@
     <title>Document</title>
   </head>
   <body>
-    <%- include ('partials/nav')-%>
-    <header>
-      <h1>Welkom!</h1>
-
-      <a href="profile/create">Maak je profiel aan</a>
-    </header>
+    <form action="/send" method="POST">
+      <input type="text" name="name" id="name" />
+      <label for="name">naam aub</label>
+      <button>submit</button>
+    </form>
   </body>
 </html>

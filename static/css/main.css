@@ -17,6 +17,38 @@ ul {
   list-style: none;
 }
 
+nav {
+  height: 5vh;
+  background: #00adb5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav ul {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 1em;
+}
+
 body.create h1,
 body.create h2,
 body.create h3,
@@ -53,7 +85,7 @@ body.create .naw li {
 }
 
 body.create .naw li:after {
-  content: '';
+  content: "";
   display: block;
   width: 100%;
   height: 3px;
@@ -149,20 +181,20 @@ body.create .hobbies label {
   transition: 0.3s all ease;
 }
 
-body.create .hobbies input[type='checkbox'] {
+body.create .hobbies input[type="checkbox"] {
   position: absolute;
   opacity: 0;
 }
 
-body.create .hobbies input[type='checkbox']:hover ~ label,
-body.create .hobbies input[type='checkbox']:focus ~ label {
+body.create .hobbies input[type="checkbox"]:hover ~ label,
+body.create .hobbies input[type="checkbox"]:focus ~ label {
   border: 1px solid #ff5722;
   background: #eeeeee;
   -webkit-box-shadow: 0px 0px 0px 1px #ff5722 inset;
           box-shadow: 0px 0px 0px 1px #ff5722 inset;
 }
 
-body.create .hobbies input[type='checkbox']:checked ~ label {
+body.create .hobbies input[type="checkbox"]:checked ~ label {
   background: #00adb5;
   color: white;
 }
@@ -308,20 +340,25 @@ body.profilesList section {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin: 1em;
 }
 
-body.profilesList a {
+body.profilesList section a {
   text-decoration: none;
   color: #00adb5;
+  margin: 1em;
+  min-height: 6em;
 }
 
-body.profilesList div.profile {
+body.profilesList section div.profile {
   background: #eeeeee;
   border: 1px solid #00adb5;
   padding: 2em;
+  min-width: 20em;
+  text-align: center;
 }
 
 body.edit {
@@ -367,7 +404,7 @@ body.edit .naw li {
 }
 
 body.edit .naw li:after {
-  content: '';
+  content: "";
   display: block;
   width: 100%;
   height: 3px;
@@ -463,20 +500,20 @@ body.edit .hobbies label {
   transition: 0.3s all ease;
 }
 
-body.edit .hobbies input[type='checkbox'] {
+body.edit .hobbies input[type="checkbox"] {
   position: absolute;
   opacity: 0;
 }
 
-body.edit .hobbies input[type='checkbox']:hover ~ label,
-body.edit .hobbies input[type='checkbox']:focus ~ label {
+body.edit .hobbies input[type="checkbox"]:hover ~ label,
+body.edit .hobbies input[type="checkbox"]:focus ~ label {
   border: 1px solid #ff5722;
   background: #eeeeee;
   -webkit-box-shadow: 0px 0px 0px 1px #ff5722 inset;
           box-shadow: 0px 0px 0px 1px #ff5722 inset;
 }
 
-body.edit .hobbies input[type='checkbox']:checked ~ label {
+body.edit .hobbies input[type="checkbox"]:checked ~ label {
   background: #00adb5;
   color: white;
 }
