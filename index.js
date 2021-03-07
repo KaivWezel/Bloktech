@@ -25,12 +25,11 @@ mongoose
     console.log("error", err);
   });
 
-app.use(profileRoutes);
-//serve static files
-app.use(express.static("static"));
-app.use(urlencodedParser);
-//set view engine
 app.set("view engine", "ejs");
+
+app.use(express.static("static"));
+app.use(profileRoutes);
+app.use(urlencodedParser);
 
 app.listen(port, () => {
   console.log(`listening at port ${port}`);

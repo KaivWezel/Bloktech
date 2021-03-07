@@ -1,5 +1,6 @@
 const User = require("../models/user");
 const fs = require("fs");
+const user = require("../models/user");
 //profile_create_get, profile_create_post, profile_get, profile_edit, profile_delete
 
 const profile_create_get = (req, res) => {
@@ -30,24 +31,32 @@ const profile_get = async (req, res) => {
   });
 };
 
-const profile_post = async (req, res) => {
+const profile_update = async (req, res) => {
+  let updateUser = await User.findById(req.params.profileId).then((User) => {
+    return User;
+  });
+  console.log(updateUser);
+  const checkImg = () => {
+    if (req.file == undefined) {
+      console.log("geen img");
+    } else {
+      console.log("wel img");
+      deleteImg(updateUser.img);
+    }
+  };
+  checkImg();
   const update = {
     name: req.body.name,
     birthdate: req.body.birthdate,
     email: req.body.email,
     hobbies: req.body.hobbies,
     bio: req.body.bio,
-    img: req.file.filename,
+    img: req.file ? req.file.filename : updateUser.img,
   };
-  console.log(req.params.profileId);
-  console.log(req.body);
-  const updateUser = await User.findOneAndUpdate(
-    { _id: req.params.profileId },
-    update
-  ).then((result) => {
-    return result;
+  await User.updateOne({ _id: req.params.profileId }, update);
+  user.findById(req.params.profileId).then((User) => {
+    console.log(User);
   });
-  deleteImg(updateUser.img);
   res.redirect("/profiles");
 };
 
@@ -75,7 +84,7 @@ module.exports = {
   profile_create_get,
   profile_create_post,
   profile_get,
-  profile_post,
+  profile_update,
   profile_edit_get,
   profile_delete,
 };

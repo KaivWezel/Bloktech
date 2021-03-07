@@ -30,7 +30,6 @@ prevBtn.addEventListener("click", prevPage);
 nextBtn.addEventListener("click", nextPage);
 inputs.forEach((input) => {
   input.addEventListener("invalid", (e) => {
-    // e.preventDefault();
     console.log("invalid input", e.path);
     e.path[3].scrollIntoView();
   });

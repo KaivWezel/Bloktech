@@ -55,7 +55,7 @@ router.post(
   "/profile/:profileId",
   urlencodedParser,
   upload.single("upload"),
-  profileController.profile_post
+  profileController.profile_update
 );
 
 module.exports = router;

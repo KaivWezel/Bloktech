@@ -97,7 +97,6 @@ body.create {
       font-size: 1em;
       font-weight: 300;
       background: $white;
-      scroll-padding-left: 50em;
       &:hover {
         background-color: rgb(207, 207, 207);
       }
@@ -201,6 +200,7 @@ body.create {
       }
     }
     button {
+      display: none;
       position: fixed;
       bottom: 4em;
       right: 8em;

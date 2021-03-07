@@ -269,6 +269,7 @@ body.create .upload input::-webkit-file-upload-button {
 }
 
 body.create .upload button {
+  display: none;
   position: fixed;
   bottom: 4em;
   right: 8em;
