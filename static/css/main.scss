@@ -55,6 +55,7 @@ body.create {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
   }
   .naw {
     ul {
@@ -96,6 +97,7 @@ body.create {
       font-size: 1em;
       font-weight: 300;
       background: $white;
+      scroll-padding-left: 50em;
       &:hover {
         background-color: rgb(207, 207, 207);
       }
@@ -199,9 +201,11 @@ body.create {
       }
     }
     button {
-      position: absolute;
-      bottom: 10em;
-      padding: 1em 3em;
+      position: fixed;
+      bottom: 4em;
+      right: 8em;
+      min-width: 10em;
+      padding: 1em;
       appearance: none;
       border: none;
       background: $blue;
@@ -449,4 +453,32 @@ body.edit {
       }
     }
   }
+}
+.next,
+.prev {
+  appearance: none;
+  border: none;
+  min-width: 10em;
+  color: $blue;
+  border: 2px solid $blue;
+  padding: 1em;
+  cursor: pointer;
+  transition: all 0.5s;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.next {
+  position: fixed;
+  bottom: 5em;
+  right: 10em;
+}
+.prev {
+  position: fixed;
+  bottom: 5em;
+  left: 10em;
 }

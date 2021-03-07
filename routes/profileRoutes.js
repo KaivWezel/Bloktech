@@ -34,9 +34,6 @@ const upload = multer({ storage: storage });
 //get create profile
 router.get("/profile/create", profileController.profile_create_get);
 
-// current user Id storage
-let profileId;
-
 // receive created profile
 router.post(
   "/profile/create",

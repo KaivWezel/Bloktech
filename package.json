@@ -4,8 +4,8 @@
   "description": "First webapp in nodejs",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js",
-    "watchserver": "nodemon index.js"
+    "test": "node index",
+    "server": "node index"
   },
   "repository": {
     "type": "git",
