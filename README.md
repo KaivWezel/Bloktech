@@ -11,4 +11,4 @@ Find it [here](https://github.com/KaivWezel/Bloktech/blob/master/LICENSE)
 ## How to install
 * Clone repository to local directory/repository using `git clone`.
 * Install neccesary packages. `npm install`
-* run server `npm startServer`
+* run server `npm run`
