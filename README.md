@@ -22,7 +22,12 @@ During this project I started working on my first webapplication. The concept is
 
 ## How to use
 
-If you have started the server, you can navigate to `localhost:4000` in your browser. You will find a simple menu which you can walk through to create and edit your profile.
+* If you have started the server, you can navigate to `localhost:4000` in your browser. 
+* You will find a simple menu to walk through and create your first profile.
+* After creating, your profile will be presented and you have 2 options, edit and delete.
+* If you want to edit some information on your profile, click 'bewerken'.
+* if you want to delete your profile, click 'verwijderen' 
+
 
 ## Documentation
 
@@ -34,5 +39,5 @@ Find it [here](https://github.com/KaivWezel/Bloktech/blob/master/LICENSE)
 
 ## Sources
 
-[MongoDB. (z.d.). The most popular database for modern apps. https://www.mongodb.com/](https://www.mongodb.com/)
-[Hogeschool van Amsterdam CMD. (z.d.). Blok Tech. GitHub. https://github.com/cmda-bt](https://github.com/cmda-bt)
+* [MongoDB. (z.d.). The most popular database for modern apps. https://www.mongodb.com/](https://www.mongodb.com/)
+* [Hogeschool van Amsterdam CMD. (z.d.). Blok Tech. GitHub. https://github.com/cmda-bt](https://github.com/cmda-bt)
