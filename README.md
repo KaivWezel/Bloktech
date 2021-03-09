@@ -26,7 +26,7 @@ During this project I started working on my first webapplication. The concept is
 * You will find a simple menu to walk through and create your first profile.
 * After creating, your profile will be presented and you have 2 options, edit and delete.
 * If you want to edit some information on your profile, click 'bewerken'.
-* if you want to delete your profile, click 'verwijderen' 
+* If you want to delete your profile, click 'verwijderen' 
 
 
 ## Documentation
