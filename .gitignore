@@ -3,4 +3,4 @@
 /static/uploads
 .env
 .prettierrc
-~.zip
+*.zip
