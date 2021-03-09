@@ -35,7 +35,6 @@ const profile_update = async (req, res) => {
   let updateUser = await User.findById(req.params.profileId).then((User) => {
     return User;
   });
-  console.log(updateUser);
   const checkImg = () => {
     if (req.file == undefined) {
       console.log("geen img");

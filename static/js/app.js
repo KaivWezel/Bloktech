@@ -1,5 +1,7 @@
 console.log("verbonden!");
 
-const form = document.querySelector(".basic-info");
-const button = document.querySelector(".submit");
-console.log(form, button);
+sayHi();
+
+let sayHi = () => {
+  console.log("hello");
+};
