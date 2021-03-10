@@ -17,8 +17,9 @@ During this project I started working on my first webapplication. The concept is
 ## Getting started
 
 - Clone repository to local directory/repository using `git clone https://github.com/KaivWezel/Bloktech`.
-- Install neccesary packages. `npm install`
-- run server `npm run server`
+- Install neccesary packages. `npm install`.
+- Create your own database with MongoDB to connect with.
+- run server `npm run server`.
 
 ## How to use
 
@@ -27,6 +28,7 @@ During this project I started working on my first webapplication. The concept is
 * After creating, your profile will be presented and you have 2 options, edit and delete.
 * If you want to edit some information on your profile, click 'bewerken'.
 * If you want to delete your profile, click 'verwijderen' 
+
 
 
 ## Documentation
