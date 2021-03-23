@@ -54,31 +54,19 @@
         <fieldset>
           <legend>Vink aan wat je leuk vindt</legend>
           <ul>
+            <% profile.hobbies.forEach(hobby =>{%>
             <li>
-              <input type="checkbox" name="hobbies" id="checkboxOne"
-              value="sport" <% if (profile.hobbies.includes('sport')){%> checked
-              <%}%> />
-              <label for="checkboxOne">Sport</label>
-            </li>
-            <li>
-              <input type="checkbox" name="hobbies" id="checkboxTwo"
-              value="reizen" <% if(profile.hobbies.includes('reizen')){%>
-              checked<%}%> />
-              <label for="checkboxTwo">Reizen</label>
-            </li>
-            <li>
-              <input type="checkbox" name="hobbies" id="checkboxThree"
-              value="gamen" <% if(profile.hobbies.includes('gamen')){%> checked
-              <%}%> />
-              <label for="checkboxThree">Gamen</label>
+              <input
+                type="checkbox"
+                name="hobbies"
+                id="<%=hobby%>"
+                value="<%=hobby%>"
+                checked
+              />
+              <label for="<%=hobby%>"><%=hobby%></label>
             </li>
 
-            <li>
-              <input type="checkbox" name="hobbies" id="checkboxFour"
-              value="koken" <% if(profile.hobbies.includes('koken')){%>
-              checked<%}%> />
-              <label for="checkboxFour">Koken</label>
-            </li>
+            <%})%>
           </ul>
         </fieldset>
       </section>
@@ -86,7 +74,7 @@
         <h3>Vertel iets over jezelf</h3>
         <label for="bio">Wie ben jij in het kort?</label>
         <textarea type="text" name="bio" placeholder="Hier typen" id="bio">
-<%= profile.bio %></textarea
+<%=profile.bio%></textarea
         >
       </section>
       <section class="upload">

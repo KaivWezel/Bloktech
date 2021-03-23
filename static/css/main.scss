@@ -1,4 +1,4 @@
-$text: "poppins", sans-serif;
+$text: 'poppins', sans-serif;
 $darkblue: #303841;
 $white: #eeeeee;
 $red: #ff5722;
@@ -66,7 +66,7 @@ body.create {
     li {
       position: relative;
       &:after {
-        content: "";
+        content: '';
         display: block;
         width: 100%;
         height: 3px;
@@ -139,7 +139,7 @@ body.create {
       cursor: pointer;
       transition: 0.3s all ease;
     }
-    input[type="checkbox"] {
+    input[type='checkbox'] {
       position: absolute;
       opacity: 0;
       &:hover ~ label,
@@ -304,7 +304,7 @@ body.edit {
     li {
       position: relative;
       &:after {
-        content: "";
+        content: '';
         display: block;
         width: 100%;
         height: 3px;
@@ -377,7 +377,7 @@ body.edit {
       cursor: pointer;
       transition: 0.3s all ease;
     }
-    input[type="checkbox"] {
+    input[type='checkbox'] {
       position: absolute;
       opacity: 0;
       &:hover ~ label,

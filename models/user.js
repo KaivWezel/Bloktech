@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose');
 
 const userSchema = mongoose.Schema({
   name: {
@@ -23,10 +23,10 @@ const userSchema = mongoose.Schema({
   img: {
     type: String,
   },
-})
+});
 
 module.exports = mongoose.model(
-  "user",
+  'tank',
   userSchema,
-  console.log("User model loaded")
-)
+  console.log('User model loaded')
+);

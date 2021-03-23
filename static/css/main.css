@@ -87,7 +87,7 @@ body.create .naw li {
 }
 
 body.create .naw li:after {
-  content: "";
+  content: '';
   display: block;
   width: 100%;
   height: 3px;
@@ -129,7 +129,6 @@ body.create .naw input {
   font-size: 1em;
   font-weight: 300;
   background: #eeeeee;
-  scroll-padding-left: 50em;
 }
 
 body.create .naw input:hover {
@@ -184,20 +183,20 @@ body.create .hobbies label {
   transition: 0.3s all ease;
 }
 
-body.create .hobbies input[type="checkbox"] {
+body.create .hobbies input[type='checkbox'] {
   position: absolute;
   opacity: 0;
 }
 
-body.create .hobbies input[type="checkbox"]:hover ~ label,
-body.create .hobbies input[type="checkbox"]:focus ~ label {
+body.create .hobbies input[type='checkbox']:hover ~ label,
+body.create .hobbies input[type='checkbox']:focus ~ label {
   border: 1px solid #ff5722;
   background: #eeeeee;
   -webkit-box-shadow: 0px 0px 0px 1px #ff5722 inset;
           box-shadow: 0px 0px 0px 1px #ff5722 inset;
 }
 
-body.create .hobbies input[type="checkbox"]:checked ~ label {
+body.create .hobbies input[type='checkbox']:checked ~ label {
   background: #00adb5;
   color: white;
 }
@@ -410,7 +409,7 @@ body.edit .naw li {
 }
 
 body.edit .naw li:after {
-  content: "";
+  content: '';
   display: block;
   width: 100%;
   height: 3px;
@@ -506,20 +505,20 @@ body.edit .hobbies label {
   transition: 0.3s all ease;
 }
 
-body.edit .hobbies input[type="checkbox"] {
+body.edit .hobbies input[type='checkbox'] {
   position: absolute;
   opacity: 0;
 }
 
-body.edit .hobbies input[type="checkbox"]:hover ~ label,
-body.edit .hobbies input[type="checkbox"]:focus ~ label {
+body.edit .hobbies input[type='checkbox']:hover ~ label,
+body.edit .hobbies input[type='checkbox']:focus ~ label {
   border: 1px solid #ff5722;
   background: #eeeeee;
   -webkit-box-shadow: 0px 0px 0px 1px #ff5722 inset;
           box-shadow: 0px 0px 0px 1px #ff5722 inset;
 }
 
-body.edit .hobbies input[type="checkbox"]:checked ~ label {
+body.edit .hobbies input[type='checkbox']:checked ~ label {
   background: #00adb5;
   color: white;
 }

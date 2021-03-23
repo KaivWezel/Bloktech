@@ -54,40 +54,45 @@
               <input
                 type="checkbox"
                 name="hobbies"
-                id="checkboxOne"
+                id="checkbox1"
                 value="sport"
               />
-              <label for="checkboxOne">Sport</label>
+              <label for="checkbox1">Sport</label>
             </li>
             <li>
               <input
                 type="checkbox"
                 name="hobbies"
-                id="checkboxTwo"
+                id="checkbox2"
                 value="reizen"
               />
-              <label for="checkboxTwo">Reizen</label>
+              <label for="checkbox2">Reizen</label>
             </li>
             <li>
               <input
                 type="checkbox"
                 name="hobbies"
-                id="checkboxThree"
+                id="checkbox3"
                 value="gamen"
               />
-              <label for="checkboxThree">Gamen</label>
+              <label for="checkbox3">Gamen</label>
             </li>
             <li>
               <input
                 type="checkbox"
                 name="hobbies"
-                id="checkboxFour"
+                id="checkbox4"
                 value="koken"
               />
-              <label for="checkboxFour">Koken</label>
+              <label for="checkbox4">Koken</label>
             </li>
           </ul>
         </fieldset>
+        <div class="addHobby">
+          <p>Voeg jouw hobby toe</p>
+          <input type="text" id="addHobbyInput" />
+          <button id="addHobbyButton" type="submit">Toevoegen</button>
+        </div>
       </section>
       <section class="bio">
         <h3>Vertel iets over jezelf</h3>
@@ -110,9 +115,10 @@
           accept="image/png, image/jpeg, image/gif"
           required
         />
-        <button>submit</button>
+        <button class="submit">submit</button>
       </section>
     </form>
     <script src="../js/create.js"></script>
+    <script src="../js/add.js"></script>
   </body>
 </html>
