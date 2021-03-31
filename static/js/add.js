@@ -13,6 +13,7 @@ addBtn.addEventListener('click', function (e) {
 });
 
 let checkboxIndex = 5;
+
 function createNewhobby(hobby) {
   const item = document.createElement('li');
 
